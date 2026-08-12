@@ -11,6 +11,8 @@ jobs:
     permissions:
       contents: read
       deployments: write
+      id-token: write
+      pages: write
     name: Deploy to GitHub Pages
     steps:
       - uses: actions/checkout@v4
