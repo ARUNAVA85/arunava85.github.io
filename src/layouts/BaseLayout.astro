@@ -1,0 +1,44 @@
+---
+// BaseLayout
+// Shared layout for all pages: footer, SEO, and main content slot
+// Provides consistent navigation and structure across the site
+
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const { title, description, ogImage, canonical } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <SEO
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      canonicalUrl={canonical}
+    />
+    <title>{title || 'Arunava Nandi - Portfolio'}</title>
+  </head>
+
+  <body class="text-neutral-900 antialiased" style="background-color: #ffffff;">
+    <main class="min-h-screen w-full">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <slot />
+      </div>
+    </main>
+    <div class="w-full border-t border-neutral-200">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>

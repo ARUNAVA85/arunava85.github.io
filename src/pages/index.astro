@@ -1,0 +1,33 @@
+---
+// Home Page / Index
+// Single-page portfolio with all major sections
+// Smooth scrolling between Hero, About, Skills, Projects, Blog, and Contact
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<BaseLayout
+  title="Arunava Nandi - QA to Product Developer | Portfolio"
+  description="Professional portfolio of Arunava Nandi. Transitioning from QA automation testing to product development with expertise in system design, DSA, and agentic engineering."
+  ogImage="/og-image.png"
+>
+  <!-- Hero Section: First Impression -->
+  <Hero />
+
+  <!-- Skills Section: Expertise Overview -->
+  <Skills />
+
+  <!-- Projects Section: Work Showcase -->
+  <Projects />
+
+  <!-- Blog Preview Section: Latest Articles -->
+  <BlogPreview />
+
+  <!-- Contact Section: Call to Action -->
+  <Contact />
+</BaseLayout>

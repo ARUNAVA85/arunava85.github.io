@@ -1,0 +1,100 @@
+---
+// Blog Listing Page
+// Displays all Medium blog posts as beautiful cards
+// Each card links to the Medium post (external link, opens in new tab)
+// Data comes from src/data/blogPosts.ts - update that file to add/remove posts
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { blogPosts } from '../../data/blogPosts';
+---
+
+<BaseLayout
+  title="Tech Blog - Articles & Insights | Arunava Nandi"
+  description="Articles on automation testing, system design, AI in testing, and the journey from QA to product development."
+  canonical={`${Astro.url.origin}/blog/`}
+>
+  <!-- Page Header -->
+  <div class="py-12 md:py-16">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-neutral-900">Tech Articles & Insights</h1>
+    <p class="text-base md:text-lg text-neutral-700 max-w-2xl leading-relaxed">
+      Exploring automation testing, system design, agentic engineering, and my transition from QA to product development.
+      All articles published on Medium.
+    </p>
+  </div>
+
+  <!-- Articles Grid -->
+  <section class="py-12 md:py-16">
+    <div class="space-y-8 md:space-y-10">
+      {
+        blogPosts.map((post) => (
+          <a
+            href={post.mediumUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group border-b border-neutral-200 pb-6 md:pb-8 block"
+          >
+            {/* Post Content */}
+            <div class="flex flex-col">
+              {/* Date */}
+              <span class="text-xs md:text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-2">
+                {new Date(post.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </span>
+
+              {/* Title */}
+              <h3 class="text-lg md:text-xl font-semibold mb-2 text-neutral-900 group-hover:text-blue-600 transition-colors">
+                {post.title}
+              </h3>
+
+              {/* Excerpt */}
+              <p class="text-base md:text-lg text-neutral-700 mb-4 leading-relaxed">
+                {post.excerpt}
+              </p>
+
+              {/* Tags */}
+              <div class="mb-4 flex flex-wrap gap-2">
+                {post.tags.slice(0, 3).map((tag) => (
+                  <span class="text-xs px-2 py-1 bg-neutral-100 text-neutral-700 rounded">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Read More Link */}
+              <div class="text-blue-600 group-hover:text-blue-700 font-medium text-sm group-hover:translate-x-1 transition-transform inline-block">
+                Read on Medium →
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    {blogPosts.length === 0 && (
+      <div class="text-center py-12">
+        <p class="text-slate-600">No articles yet. Check back soon!</p>
+      </div>
+    )}
+  </section>
+
+  <!-- Medium Profile CTA -->
+  <section class="section-container border-t border-slate-200">
+    <div class="text-center p-8 bg-blue-50 rounded-lg border border-blue-200">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">More on Medium</h2>
+      <p class="text-slate-700 mb-6">
+        For a complete list of articles and to follow for future posts, visit my Medium profile.
+      </p>
+      <a
+        href="https://medium.com/@YOUR_USERNAME"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block btn btn-primary"
+      >
+        Follow on Medium
+      </a>
+    </div>
+  </section>
+</BaseLayout>

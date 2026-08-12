@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Professional portfolio website - Transition from QA to Product Development",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "latest",
+    "@astrojs/sitemap": "latest",
+    "@astrojs/tailwind": "latest",
+    "tailwindcss": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

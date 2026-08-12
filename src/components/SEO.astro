@@ -1,0 +1,96 @@
+---
+// SEO Component
+// Handles all meta tags, Open Graph, Twitter cards, canonical URLs, and structured data
+// Used in BaseLayout and page components
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  canonicalUrl?: string;
+  author?: string;
+  publishedDate?: string;
+  updatedDate?: string;
+}
+
+const {
+  title = 'Arunava Nandi - QA to Product Developer',
+  description = 'Professional portfolio showcasing transition from automation testing to product development. Building expertise in system design, DSA, and agentic engineering.',
+  ogImage = '/og-image.png',
+  ogType = 'website',
+  canonicalUrl = Astro.url.href,
+  author = 'Arunava Nandi',
+  publishedDate,
+  updatedDate,
+} = Astro.props;
+
+// Safe site URL for structured data
+const SITE_URL = 'https://YOUR_USERNAME.github.io/portfolio-website';
+---
+
+<!-- Primary Meta Tags -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content={description} />
+<meta name="author" content={author} />
+<meta name="robots" content="index, follow" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Arunava Nandi - Portfolio" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogImage} />
+<meta property="twitter:creator" content="@YOUR_TWITTER_HANDLE" />
+
+<!-- Article metadata (for blog posts) -->
+{
+  publishedDate && (
+    <meta property="article:published_time" content={publishedDate} />
+  )
+}
+{updatedDate && <meta property="article:modified_time" content={updatedDate} />}
+{author && <meta property="article:author" content={author} />}
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- JSON-LD Structured Data: Person (for homepage) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: author,
+  url: SITE_URL,
+  jobTitle: 'QA Automation Engineer → Product Developer',
+  email: 'hidden',
+  description:
+    'Transitioning from test automation to product development. Expertise in testing frameworks, system design, DSA, and agentic engineering.',
+  sameAs: [
+    'https://github.com/YOUR_USERNAME',
+    'https://linkedin.com/in/YOUR_LINKEDIN',
+    'https://medium.com/@YOUR_USERNAME',
+  ],
+  image: ogImage,
+})} />
+
+<!-- Global Site Tag for Analytics (optional - can be enabled later) -->
+<!-- Google Analytics, Plausible, or similar can be added here -->
+
+<!-- No-script fallback for accessibility -->
+<noscript>
+  <p>This site works best with JavaScript enabled.</p>
+</noscript>

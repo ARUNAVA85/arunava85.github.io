@@ -1,0 +1,116 @@
+---
+// Header Component
+// Navigation bar with smart routing for home and blog pages
+// From blog page, nav links redirect to home and scroll to section
+
+import { basename } from 'path';
+
+const currentPath = new URL(Astro.request.url).pathname;
+const isHomePage = currentPath === '/' || currentPath === '/index.html';
+const isBlogPage = currentPath.includes('/blog');
+
+// Navigation items with smart href handling
+const navItems = [
+  {
+    label: 'About',
+    href: isHomePage ? '#about' : '/#about',
+    scroll: !isHomePage
+  },
+  {
+    label: 'Projects',
+    href: isHomePage ? '#projects' : '/#projects',
+    scroll: !isHomePage
+  },
+  {
+    label: 'Skills',
+    href: isHomePage ? '#skills' : '/#skills',
+    scroll: !isHomePage
+  },
+  {
+    label: 'Blog',
+    href: '/blog',
+    scroll: false
+  },
+  {
+    label: 'Contact',
+    href: isHomePage ? '#contact' : '/#contact',
+    scroll: !isHomePage
+  },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-neutral-200">
+  <nav class="max-w-3xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+    <!-- Logo / Home Link -->
+    <a href="/" class="text-2xl font-bold gradient-text hover:opacity-80">
+      Arunava
+    </a>
+
+    <!-- Navigation Links -->
+    <ul class="hidden gap-8 md:flex">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-neutral-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="md:hidden flex flex-col gap-1.5 items-center justify-center p-2 hover:bg-neutral-100 rounded"
+      aria-label="Toggle menu"
+      id="mobile-menu-btn"
+    >
+      <span class="w-6 h-0.5 bg-neutral-900 rounded"></span>
+      <span class="w-6 h-0.5 bg-neutral-900 rounded"></span>
+      <span class="w-6 h-0.5 bg-neutral-900 rounded"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    class="hidden md:hidden bg-white border-t border-neutral-200 px-4 py-4"
+    id="mobile-menu"
+  >
+    <ul class="flex flex-col gap-4">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium block py-2"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+</script>
