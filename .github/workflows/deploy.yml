@@ -22,6 +22,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        env:
+          PUBLIC_WEB3FORMS_KEY: ${{ secrets.PUBLIC_WEB3FORMS_KEY }}
 
       - name: Build
         run: npm run build
