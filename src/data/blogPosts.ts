@@ -16,49 +16,60 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: 'transitioning-qa-dev',
-    title: 'Transitioning from QA to Product Development: My Journey',
+    id: 'array_and_pointers',
+    title: 'Array and Pointers in C: A Deep Dive',
     excerpt:
-      'Lessons learned from 5+ years in test automation to stepping into full-stack development. Mistakes to avoid and skills that transfer.',
+      'Understanding the fundamentals of arrays and pointers in C programming. Common pitfalls and best practices.',
     date: '2024-08-10',
-    tags: ['career', 'QA', 'testing', 'development'],
-    mediumUrl: 'https://medium.com/@YOUR_USERNAME/transitioning-qa-dev',
+    tags: ['programming', 'C', 'arrays', 'pointers'],
+    mediumUrl: 'https://arunava08.medium.com/array-and-pointers-concept-in-brief-63e8619173d',
     coverImage:
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400',
+      'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Pu3JI1gVbe4Oum9c0kVoHQ.jpeg',
   },
-  {
-    id: 'agentic-testing-101',
-    title: 'Agentic Engineering in Testing: A Practical Guide',
-    excerpt:
-      'How autonomous agents can revolutionize test automation. Building intelligent test cases with Claude and LangChain.',
-    date: '2024-07-20',
-    tags: ['agentic-ai', 'testing', 'automation', 'agents'],
-    mediumUrl: 'https://medium.com/@YOUR_USERNAME/agentic-testing-101',
-    coverImage:
-      'https://images.unsplash.com/photo-1677442d019cecf8d4a1e5b3eae27f1f4?w=800&h=400',
-  },
-  {
-    id: 'playwright-vs-tosca',
-    title: 'Playwright vs Tricentis Tosca: Choosing the Right Tool',
-    excerpt:
-      'Comparison of two powerful test automation tools. When to use each, pros/cons, and my experience migrating between them.',
-    date: '2024-06-15',
-    tags: ['testing', 'playwright', 'tosca', 'automation'],
-    mediumUrl: 'https://medium.com/@YOUR_USERNAME/playwright-vs-tosca',
-    coverImage:
-      'https://images.unsplash.com/photo-1517694712139-48d2ceaa28c5?w=800&h=400',
-  },
-  {
-    id: 'dsa-interview-prep',
-    title: 'DSA Interview Prep: Tips from an Automation Engineer',
-    excerpt:
-      'Preparing for tech interviews as someone from a QA background. How to approach data structures and algorithms effectively.',
-    date: '2024-05-22',
-    tags: ['interviews', 'dsa', 'career', 'learning'],
-    mediumUrl: 'https://medium.com/@YOUR_USERNAME/dsa-interview-prep',
-    coverImage:
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400',
-  },
+  // {
+  //   id: 'transitioning-qa-dev',
+  //   title: 'Transitioning from QA to Product Development: My Journey',
+  //   excerpt:
+  //     'Lessons learned from 2+ years in test automation to stepping into full-stack development. Mistakes to avoid and skills that transfer.',
+  //   date: '2024-08-10',
+  //   tags: ['career', 'QA', 'testing', 'development'],
+  //   mediumUrl: 'https://medium.com/@YOUR_USERNAME/transitioning-qa-dev',
+  //   coverImage:
+  //     'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400',
+  // },
+  // {
+  //   id: 'agentic-testing-101',
+  //   title: 'Agentic Engineering in Testing: A Practical Guide',
+  //   excerpt:
+  //     'How autonomous agents can revolutionize test automation. Building intelligent test cases with Claude and Playwright.',
+  //   date: '2024-07-20',
+  //   tags: ['agentic-ai', 'testing', 'automation', 'agents'],
+  //   mediumUrl: 'https://medium.com/@YOUR_USERNAME/agentic-testing-101',
+  //   coverImage:
+  //     'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400',
+  // },
+  // {
+  //   id: 'playwright-vs-tosca',
+  //   title: 'Playwright vs Tricentis Tosca: Choosing the Right Tool',
+  //   excerpt:
+  //     'Comparison of two powerful test automation tools. When to use each, pros/cons, and my experience migrating between them.',
+  //   date: '2024-06-15',
+  //   tags: ['testing', 'playwright', 'tosca', 'automation'],
+  //   mediumUrl: 'https://medium.com/@YOUR_USERNAME/playwright-vs-tosca',
+  //   coverImage:
+  //     'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400',
+  // },
+  // {
+  //   id: 'dsa-interview-prep',
+  //   title: 'DSA Interview Prep: Tips from an Automation Engineer',
+  //   excerpt:
+  //     'Preparing for tech interviews as someone from a QA background. How to approach data structures and algorithms effectively.',
+  //   date: '2024-05-22',
+  //   tags: ['interviews', 'dsa', 'career', 'learning'],
+  //   mediumUrl: 'https://medium.com/@YOUR_USERNAME/dsa-interview-prep',
+  //   coverImage:
+  //     'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400',
+  // },
 ];
 
 // Optional: Get posts by tag

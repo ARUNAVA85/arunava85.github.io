@@ -5,6 +5,7 @@
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import Intro from '../components/Intro.astro';
 import Skills from '../components/Skills.astro';
 import Projects from '../components/Projects.astro';
 import BlogPreview from '../components/BlogPreview.astro';
@@ -12,12 +13,15 @@ import Contact from '../components/Contact.astro';
 ---
 
 <BaseLayout
-  title="Arunava Nandi - QA to Product Developer | Portfolio"
+  title="Arunava Nandi | Portfolio"
   description="Professional portfolio of Arunava Nandi. Transitioning from QA automation testing to product development with expertise in system design, DSA, and agentic engineering."
   ogImage="/og-image.png"
 >
   <!-- Hero Section: First Impression -->
   <Hero />
+
+  <!-- Intro Section: Personal Journey & Context -->
+  <Intro />
 
   <!-- Skills Section: Expertise Overview -->
   <Skills />

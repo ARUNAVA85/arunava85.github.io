@@ -25,11 +25,12 @@ export const skillsData: SkillCategory[] = [
   },
   {
     name: 'Development',
-    description: 'Backend and full-stack development with modern frameworks',
+    description: 'Backend development with modern frameworks',
     skills: [
+      'Java',
+      'Spring Boot',
       'JavaScript/TypeScript',
       'Node.js',
-      'React',
       'Express.js',
       'Python',
       'SQL',
