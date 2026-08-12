@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 // TODO: Replace with your actual GitHub username and repo name
 // For GitHub Pages, your site URL will be: https://YOUR_USERNAME.github.io/portfolio-website/
 // Or if using a custom domain: https://yourdomain.com/
-const SITE_URL = 'https://YOUR_USERNAME.github.io/portfolio-website';
+const SITE_URL = 'https://arunavanandi.github.io';
 
 export default defineConfig({
   // Use the SITE_URL for sitemap generation and canonical URLs
